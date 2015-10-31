@@ -3,16 +3,27 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
-  return 0
+  if arr != []
+    return arr.reduce(:+)
+  else 
+    return 0
+  end
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  else
+    return arr.sort { |a,b| b <=> a }.take(2).reduce(:+)
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.empty? || arr.size == 1
+    return false
+  else
+    return arr.permutation(2).any? { |a,b| a + b == n }
+  end
 end
 
 # Part 2
